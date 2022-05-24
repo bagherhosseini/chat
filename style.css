@@ -1,0 +1,1595 @@
+/*--------------------------------html--------------------------------*/
+
+/*scroll*/
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #3b3b3b; 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #303030; 
+}
+
+/*content*/
+body{
+  font-family: "Roboto",Helvetica,Arial,sans-serif;
+  margin: 0;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to top, #1b1b33 20%,  #251421 80%);
+  background-repeat: no-repeat, repeat;
+}
+
+header{
+  padding: 10px;
+}
+
+.content {
+  padding: 10px;
+}
+
+footer{
+  padding: 10px;
+}
+
+/*--------------------------------inloggnings sida--------------------------------*/
+
+/*för index backgrund*/
+
+@keyframes move_wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1)
+  }
+  50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.55)
+  }
+  100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1)
+  }
+}
+.waveWrapper {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  background-image: linear-gradient(to top, #1b1b33 20%,  #251421 80%);
+}
+.bgTop {
+  z-index: 15;
+  opacity: 0.5;
+}
+.bgMiddle {
+  z-index: 10;
+  opacity: 0.75;
+}
+.bgBottom {
+  z-index: 5;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.waveTop {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+animation: move-wave 3s;
+ -webkit-animation: move-wave 3s;
+ -webkit-animation-delay: 1s;
+ animation-delay: 1s;
+}
+.waveMiddle {
+  background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+  animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+  background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+  animation: move_wave 15s linear infinite;
+}
+
+.wave1, .wave2{height: 30px;position: absolute;width: 100%;z-index: -1;left: 0;bottom: 0;}
+
+.wave1 {
+  -webkit-animation: wave-animation1 8.7s infinite linear; /* Safari 4+ */
+  -moz-animation:    wave-animation1 8.7s infinite linear; /* Fx 5+ */
+  -o-animation:      wave-animation1 8.7s infinite linear; /* Opera 12+ */
+  animation:         wave-animation1 8.7s infinite linear; /* IE 10+ */
+}
+.wave2 {
+  -webkit-animation: wave-animation1 6.3s infinite linear; /* Safari 4+ */
+  -moz-animation:    wave-animation1 6.3s infinite linear; /* Fx 5+ */
+  -o-animation:      wave-animation1 6.3s infinite linear; /* Opera 12+ */
+  animation:         wave-animation1 6.3s infinite linear; /* IE 10+ */
+}
+
+@-webkit-keyframes wave-animation1 {
+  0%   { background-position: 0 0; }
+  100% { background-position: 1601px 0; }
+}
+@-moz-keyframes wave-animation1 {
+  0%   { background-position: 0 0; }
+  100% { background-position: 1601px 0; }
+}
+@-o-keyframes wave-animation1 {
+  0%   { background-position: 0 0; }
+  100% { background-position: 1601px 0; }
+}
+@keyframes wave-animation1 {
+  0%   { background-position: 0 0; }
+  100% {background-position: 1601px 0;}
+}
+
+.wave1 {
+  background: url('http://www.templates-preview.com/bootstrap-templates/300111854/images/wave1.png') 0 0 repeat-x;
+}
+.wave2 {
+  background: url('http://www.templates-preview.com/bootstrap-templates/300111854/images/wave2.png') 0 0 repeat-x;
+}
+
+/*för inlogningbox*/
+.login_box{
+  z-index: 1000;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 1px;
+  padding-bottom: 1px;
+  height: 180px;
+  width: 400px;
+  background-image: linear-gradient(to top, #141427 20%,  #1b0e18 80%);
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.596) 0px 5px 15px 0px;
+}
+
+.login_box h1{
+  line-height: 50px;
+  text-align: center;
+}
+
+.login_box h2{
+  line-height: 50px;
+  text-align: center;
+}
+
+.login_box a{
+  text-decoration: none;
+}
+
+.login_btn {
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 10px;
+  border: none;
+  width: auto;
+  max-width: 200px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+ }
+ 
+ .login_btn span {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+ }
+ 
+ .login_btn .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+ }
+ 
+ .login_btn .liquid::after,
+ .login_btn .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-10%, -75%);
+  background: #fff;
+ }
+ 
+ .login_btn .liquid::before {
+  border-radius: 45%;
+  background: rgba(0, 0, 0, 0.397);
+  animation: animate 5s linear infinite;
+ }
+ 
+ .login_btn .liquid::after {
+  border-radius: 40%;
+  background: rgba(0, 0, 0, 0.397);
+  animation: animate 10s linear infinite;
+ }
+ 
+ .login_btn:hover .liquid {
+  top: -120px;
+ }
+ 
+ @keyframes animate {
+  0% {
+   transform: translate(-50%, -75%) rotate(0deg);
+  }
+ 
+  100% {
+   transform: translate(-50%, -75%) rotate(360deg);
+  }
+ }
+
+.error {
+  margin: 10px auto;
+  color:white;
+  width: 90%;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  background-color: #D54841;
+  border-radius: 5px;
+}
+
+/*--------------------------------för sida home--------------------------------*/
+
+/*----------------------header----------------------*/
+
+/*kanppen för see profil och loggaut*/
+.pic{
+  border-radius: 10px;
+}
+
+.sec-center{
+  z-index: 1;
+  margin-top: auto;
+  padding: 10px;
+  height: 75px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.596) 0px 5px 15px 0px;
+  background: #00000080;
+  border: 1px solid black;
+}
+
+#dropdown{
+  display: none;
+}
+
+.label_dropdown{
+  float: right;
+  cursor: pointer;
+}
+
+.dropdown:checked + label:before,
+.dropdown:not(:checked) + label:before{
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.dropdown:checked + label:before{
+  pointer-events: auto;
+}
+
+.dropdown:not(:checked) + label .uil {
+  margin-left: 10px;
+  transition: transform 200ms linear;
+}
+
+.dropdown:checked + label .uil {
+  transform: rotate(180deg);
+  margin-left: 10px;
+  transition: transform 200ms linear;
+}
+
+.section-dropdown {
+  position: fixed;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #00000080;
+  margin-top: 70px;
+  width: fit-content;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 200ms linear;
+  margin-left: calc(100vw - 170px);
+}
+
+.dropdown:checked ~ .section-dropdown{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.section-dropdown:before {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  content: '';
+  display: block;
+
+}
+
+.section-dropdown:after {
+  position: absolute;
+  top: -7px;
+  right: 20px;
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent; 
+  border-bottom: 8px solid rgb(4, 0, 255);
+  content: '';
+  display: block;
+  z-index: 2;
+  transition: all 200ms linear;
+}
+
+.section-dropdown a {
+
+  color: #fff;
+  transition: all 200ms linear;
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 5px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 2px 0;
+  text-decoration: none;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  -ms-flex-pack: distribute;
+}
+
+.section-dropdown a:hover {
+  background-color: #191b29;
+  border-radius: 10px;
+}
+
+/*knappen för att lägga till eller skapa grupper*/
+
+#dropdown_add{
+  display: none;
+}
+
+.btn_add{
+  font-size: 30px;
+  color: #fff;
+  width: fit-content;
+  text-decoration: none;
+  padding: 8px;
+  margin-right: 20px;
+}
+
+.dropdown_add:checked + label,
+.dropdown_add:not(:checked) + label{
+  height: auto;
+  float: right;
+  transition: all 200ms linear;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dropdown_add:checked + label:before,
+.dropdown_add:not(:checked) + label:before{
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.dropdown_add:checked + label:before{
+  pointer-events: auto;
+}
+
+.dropdown_add:not(:checked) + label .uil {
+  margin-left: 10px;
+  transition: transform 200ms linear;
+}
+
+.dropdown_add:checked + label .uil {
+  transform: rotate(180deg);
+  margin-left: 10px;
+  transition: transform 200ms linear;
+}
+
+.section-dropdown_add {
+  border: 1px solid black;
+  position: absolute;
+  overflow: auto;
+  padding: 20px;
+  background: #00000080;
+  width: 100%;
+  max-width: 500px;
+  height: calc(100% - 20px);
+  max-height: 80wh;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: translateY(20px);
+  transition: all 200ms linear;
+  left: 50%;
+  opacity: 1;
+  transform: translate( -50%);
+}
+
+.for_blur{
+  position: absolute;
+  margin-top: 70px;
+  backdrop-filter: blur(5px);
+  width: calc(100% - 40px);
+  height: calc(100vh - 100px);
+  opacity: 0;
+  pointer-events: none;
+}
+  
+.dropdown_add:checked ~ .for_blur{
+  z-index: 1;
+  opacity: 1; 
+  pointer-events: auto; 
+}
+    
+.section-dropdown_add:before {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  content: '';
+  display: block;
+  z-index: 1;
+}
+
+.section-dropdown_add a {
+  position: relative;
+  color: #fff;
+  transition: all 200ms linear;
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 5px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 2px 0;
+  text-decoration: none;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  -ms-flex-pack: distribute;
+}
+
+.section-dropdown_add a:hover {
+  background-color: #191b29;
+  border-radius: 10px;
+}
+
+
+/*för select*/
+
+#kategori {
+  position: relative;
+  margin-top: 10px;
+  padding: 3px;
+  margin: 0;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px;
+  background: #000000;
+  color:white;
+  font-size: 15px;
+  outline:none;
+  display: inline-block;
+  cursor:pointer;
+}
+
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #kategori {padding-right:17px}
+}
+
+.upload_img{
+  position: relative;
+  font-size: 15px;
+  display: inline-table;
+  bottom: 25px;
+  cursor:pointer;
+  margin-top: 40px;
+}
+
+.select_file{
+  height: 80px;
+  width: 200px;
+  overflow: hidden;
+}
+
+/*för lägga till klasser*/
+
+.konto_box{
+  background: #00000096;
+  border: 1px solid black;
+  height: auto;
+  width: fit-content;
+  padding: 20px;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+  
+.info_add{
+  position: relative;
+  top: -20px;
+  margin-left: 10px;
+}
+  
+.text_add{
+  text-align: center;
+  margin-bottom: -2px;
+}
+
+.text_add_email{
+  font-size: 16px;
+  color: rgb(160, 160, 160);
+}
+
+.info_add_box{
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+}
+  
+.profilepic_add{
+  margin-top: 30px;
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+}
+  
+.profilepic_add_db{
+  margin-top: -5px;
+  margin-left: 70px;
+  border-radius: 100px;
+  height: 40px;
+  width: 40px;
+}
+  
+  
+.add_klass_elev_box a{
+  background-color: #0000ff;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 25px;
+  padding: 10px;
+  width: 100%;
+}
+  
+.add_btn_klass{
+  color: white;
+  background-color: #0000ff;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 25px;
+  height: fit-content;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+.add_btn_klass[disabled=disabled], add_btn_klass:disabled {
+  cursor:context-menu;
+}
+  
+.add_klass_elev_box .grupp_input{
+  font-size: 20px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 14px 10px;
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+  
+.create_klass_elev{
+  background: #00000096;
+  border: 1px solid black;
+  height: fit-content;
+  width: fit-content;
+  max-width: 347px;
+  padding: 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+  
+.join_klass_elev{
+  background: #00000096;
+  border: 1px solid black;
+  height: fit-content;
+  width: fit-content;
+  max-width: 347px;
+  padding: 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+  
+.database_admin {
+  margin: 100px auto;
+  width: 80vw;
+  height: auto;
+}
+  
+.database_admin table {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: auto;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+}
+  
+.submit_btn_addusers{
+  color: white;
+  float: right;
+  margin-right: 10vw;
+  margin-top: -90px;
+  background-color: #06060f;
+  border-radius: 5px;
+  font-size: 20px;
+  height: fit-content;
+  width: fit-content;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/*---------------------content---------------------*/
+
+/*för chat länk*/
+
+.title_home{
+  margin-top: 110px;
+}
+
+.underline-on-hover{
+  text-transform: capitalize;
+}
+
+.underline-on-hover:hover{
+  text-decoration: underline;
+}
+
+.kategori-home-chatroom{
+  font-size: 15px;
+}
+
+.klass-img{
+  border-radius: 10px;
+  width:180px;
+  height:100px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.chatroomlist{
+  width: 100%;
+  overflow: auto;
+}
+
+.chatbox{
+  display: inline-block;
+  font-size: 30px;
+  list-style-type:none;
+  padding: 10px;
+  height: 200px;
+  width: 200px;
+  background-image: linear-gradient(to top, #141427 20%,  #1b0e18 60%);
+  box-shadow: rgba(0, 0, 0, 0.596) 0px 5px 15px 0px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+.chatbox a{
+  color: white;
+  text-decoration: none;
+}
+
+/*för kategori*/
+
+.kategori{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: auto;
+  max-width: 80%;
+  background-color: #00000080;
+  border-radius: 10px;
+  padding: 4px;
+  border: 1px solid black;
+}
+
+.center_kategori{
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kategori_btn {
+  position: relative;
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 10px;
+  border: none;
+  width: 120px;
+  cursor: pointer;
+  text-align: center;
+}
+
+@media (max-width: 461px) {
+  .kategori .kategori_btn {
+    display: block;
+    margin-top: 3px;
+  }  
+}
+
+.kategori_btn span {
+  position: relative;
+  color: #fff;
+}
+ 
+.kategori_btn .liquid {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #0028aa;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+  z-index: -1;
+}
+ 
+.kategori_btn .liquid::after,
+.kategori_btn .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-10%, -75%);
+  background: #fff;
+}
+
+.kategori_btn .liquid::before {
+  border-radius: 45%;
+  background: rgba(0, 0, 0, 0.397);
+  animation: animate 5s linear infinite;
+}
+
+.kategori_btn .liquid::after {
+  border-radius: 40%;
+  background: rgba(0, 0, 0, 0.397);
+  animation: animate 10s linear infinite;
+}
+
+.kategori_btn:hover .liquid {
+top: -120px;
+}
+ 
+ @keyframes animate {
+  0% {
+   transform: translate(-50%, -75%) rotate(0deg);
+  }
+ 
+  100% {
+   transform: translate(-50%, -75%) rotate(360deg);
+  }
+ }
+
+.checkbox_kategori{
+  display: none;
+}
+
+.checked_kategori{
+  background-color: #00000080;
+  margin-top: 40px;
+  position: absolute;
+  width: auto;
+  min-width: 80%;
+  height: calc(100% - 250px);
+  overflow: auto;
+  display: none;
+  left: 50%;
+  transform: translate( -50%);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#checkbox_kategori:checked ~ .checked_kategori{
+  display: block;
+}
+
+.checked_kategori2{
+  background-color: #00000080;
+  margin-top: 40px;
+  position: absolute;
+  width: auto;
+  min-width: 80%;
+  height: calc(100% - 250px);
+  overflow: auto;
+  display: none;
+  left: 50%;
+  transform: translate( -50%);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#checkbox_kategori2:checked ~ .checked_kategori2{
+  display: block;
+}
+
+.checked_kategori3{
+  background-color: #00000080;
+  margin-top: 40px;
+  position: absolute;
+  width: auto;
+  min-width: 80%;
+  height: calc(100% - 250px);
+  overflow: auto;
+  display: none;
+  left: 50%;
+  transform: translate( -50%);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#checkbox_kategori3:checked ~ .checked_kategori3{
+  display: block;
+}
+
+.checked_kategori4{
+  background-color: #00000080;
+  margin-top: 40px;
+  position: absolute;
+  width: auto;
+  min-width: 80%;
+  height: calc(100% - 250px);
+  overflow: auto;
+  display: none;
+  left: 50%;
+  transform: translate( -50%);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#checkbox_kategori4:checked ~ .checked_kategori4{
+  display: block;
+}
+
+.checked_kategori5{
+  background-color: #00000080;
+  margin-top: 40px;
+  position: absolute;
+  width: auto;
+  min-width: 80%;
+  height: calc(100% - 250px);
+  overflow: auto;
+  display: none;
+  left: 50%;
+  transform: translate( -50%);
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#checkbox_kategori5:checked ~ .checked_kategori5{
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .login_box{
+    height: 180px;
+    width: 300px;
+  }
+
+  .checked_kategori{
+    height: calc(100% - 400px);
+    overflow: auto;
+  }
+
+  .checked_kategori2{
+    height: calc(100% - 400px);
+    overflow: auto;
+  }
+
+  .checked_kategori3{
+    height: calc(100% - 400px);
+    overflow: auto;
+  }
+
+  .checked_kategori4{
+    height: calc(100% - 400px);
+    overflow: auto;
+  }
+
+  .checked_kategori5{
+    height: calc(100% - 400px);
+    overflow: auto;
+  }
+}
+
+/*--------------------------------för add_users_grupp--------------------------------*/
+
+.info_add_user{
+  margin-top: 40px;
+  margin-bottom: -70px;
+  font-size: 17px;
+}
+
+
+.message_läggtill{
+  text-align: center;
+}
+
+.table{
+  background: #00000080;
+}
+
+/*checkbox*/
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 8px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*--------------------------------för sida profile--------------------------------*/
+.back-icon-profile{
+  position: fixed;
+  margin-top: 10px;
+}
+
+.profileinfo_box{
+  position: relative;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  height: auto;
+  width: auto;
+  min-height: 100px;
+  min-width: 300px;
+  max-width: 700px;
+  max-height: 700px;
+  background-color: #00000080;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.profileinfo_box h1{
+  line-height: 50px;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.profileinfo_box a{
+  text-decoration: none;
+}
+
+.profilepic_sidaprofile{
+  position: relative;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -50px;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn_backtohome{
+  position: absolute;
+  margin-top: 4px;
+  margin-left: 20px;
+  font-size: 25px;
+  color: #fff;
+  width: fit-content;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.gg1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  width: fit-content;
+  font-size: 1.5vh;
+}
+
+/*--------------------------------för chat--------------------------------*/
+
+/* Chat Area CSS Start */
+
+.title-grupp-chat{
+  text-transform: capitalize;
+  text-align: center;
+  position: static;
+  margin-bottom: -28px;
+  margin-top: -0px;
+  font-size: 26px;
+}
+
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  border-radius: 16px;
+  font-family: Helvetica;
+}
+
+.details{
+  width: 100vw;
+}
+
+.chat-area header{
+  border: 1px solid black;
+  border-radius: 10px;
+  background: #00000080;
+  width: auto;
+  height: auto;
+  padding-top: 13.5px;
+  padding-bottom: 13.5px;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.39) 0px 2px 1px, rgba(0, 0, 0, 0.233) 0px 4px 2px, rgba(0, 0, 0, 0.247) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  position: relative;
+  top: 10px;
+}
+
+.back_home_chat{
+  padding: 4px;
+}
+
+.chat-area header .details{
+  margin-left: 100px;
+}
+
+.chat-area header img{
+  margin: 0 15px;
+}
+
+.chat-area header .details span{
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.chat-box{
+  border: 1px solid black;
+  position: relative;
+  height: calc(100vh - 170px);
+  overflow-y: auto;
+  padding: 10px 30px 20px 30px;
+  width: auto;
+  box-shadow: rgba(0, 0, 0, 0.767) 0px 25px 20px -20px;
+  margin-top: 20px;
+}
+
+.hr{
+  height:1px;
+  border-width:0;
+  color:gray;
+  background-color:black;
+}
+
+.chat-box .text{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: calc(100% - 50px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.chat-box .chat{
+  margin: 15px 0;
+  width: 100%;
+}
+
+.chat-box .chat p{
+  word-wrap: break-word;
+  padding: 8px 16px;
+}
+
+.profilepic_chat{
+  border-radius: 100%;
+}
+
+.user_namn_chat{
+  margin-top: -60px;
+  margin-left: 50px;
+}
+
+.tid_chat{
+  margin-top: -60px;
+  margin-left: 250px;
+}
+
+.tabort_msg_chat{
+  position: sticky;
+  float: right;
+  right: 0;
+  margin-top: -40px;
+}
+
+.lowopacity_text_chat{
+  color: #868686;
+  margin-left: 10px;
+}
+
+.chat-box .outgoing{
+  display: flex;
+}
+
+.chat-box .details{
+  margin-right: auto;
+  max-width: calc(100vw - 50px);
+}
+
+.details .msg_chat_style{
+  margin-top: -10px;
+  margin-left: 50px;
+  color: #fff;
+}
+
+.chat-box .incoming{
+  display: flex;
+  align-items: flex-end;
+}
+
+.typing-area{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 18px 30px;
+  display: flex;
+  width: auto;
+  background: #00000080;
+}
+
+.typing-area input{
+  height: 45px;
+  width: calc(100% - 58px);
+  font-size: 16px;
+  padding: 0 13px;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.typing-area button{
+  color: #fff;
+  width: 55px;
+  border: none;
+  outline: none;
+  background: #333;
+  font-size: 19px;
+  cursor: pointer;
+  opacity: 0.7;
+  pointer-events: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.3s ease;
+}
+
+.typing-area button.active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*--------------------------------sidemenu--------------------------------*/
+
+.roll_sidabr-text{
+  text-align: center;
+  font-size: 20px;
+}
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/*Lägger till så att sidebar kan komma ut och gå in*/
+#layout,
+#menu,
+.menu-link {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+/*det här är parent div som menu är i.*/
+#layout {
+  position: relative;
+  padding-right: 0;
+}
+#layout.active {
+  position: relative;
+  right: 300px;
+}
+#layout.active #menu {
+  right: 300px;
+  width: 300px;
+}
+
+#layout.active .menu-link {
+  right: 300px;
+}
+
+/*menu*/
+
+#menu {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: -298px;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: #000000b9;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: rgba(0, 0, 0, 0.836) 0px 15px 25px, rgba(0, 0, 0, 0.808) 0px 5px 10px;
+  margin-top : 10px;
+}
+
+/*knappen för menu*/
+.menu-link {
+  position: fixed;
+  display: block;
+  top: 10px;
+  right: 0px;
+  background-color: #000000;
+  font-size: 10px;
+  z-index: 10;
+  width: 5em;
+  height: auto;
+  border-radius: 7px;
+  padding: 2.1em 1.6em;
+  color: white;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  background-color: rgb(0, 0, 0);
+}
+
+.menu-link span {
+  position: relative;
+  display: block;
+}
+
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+  background-color: #fff;
+  width: 100%;
+  height: 0.2em;
+}
+
+.menu-link span:before,
+.menu-link span:after {
+  position: absolute;
+  margin-top: -0.6em;
+  content: " ";
+}
+
+.menu-link span:after {
+  margin-top: 0.6em;
+}
+
+
+@media (min-width: 1215px) {
+
+  #layout {
+    padding-right: 300px;
+    right: 0;
+  }
+  #menu {
+    right: 300px;
+    background: #00000080;
+  }
+
+  .menu-link {
+    position: fixed;
+    right: 300px;
+    display: none;
+  }
+
+  #layout.active .menu-link {
+    right: 300px;
+  }
+
+  .typing-area{
+    margin-right: 300px;
+  }
+
+  .chat-box{
+    margin-right: 300px;
+  }
+
+  .chat-area header{
+    margin-right: 300px;
+  }
+
+  .chat-box .details{
+    margin-right: auto;
+    max-width: calc(100vw - 350px);
+  }
+  
+}
+
+/* userbar i menu*/
+
+.chat_lable{
+  background-color: #000;
+}
+
+.discussion {
+  width: 260px;
+  padding: 15px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.hover_chat{
+  margin-left: -40px;
+  
+}
+
+.hover_chat:hover{
+  background-color: #202225;
+}
+
+.desc-contact {
+  min-height: 43px;
+  height: fit-content;
+}
+
+.discussion .name {
+  margin-left: 60px;
+  margin-top: -38px;
+  font-size: 11pt;
+}
+
+.roll_chat{
+  margin-left: 10px;
+}
+
+.ban_user_chat{
+  float: right;
+  margin-left: 10px;
+  margin-top: -2px;
+
+}
+
+
+/*--------------------------------dbadmin--------------------------------*/
+
+.back-icon-db{
+  position: fixed;
+  margin-top: 10px;
+}
+
+.error-db {
+  background: #00000080;
+  color: #e74c3c;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+  margin: 100px auto;
+  width: 180px;
+  text-align: center;
+}
+
+.success-db {
+  background: #00000080;
+  color: #00bc8c;
+  padding: 10px;
+  width: 95%;
+  border-radius: 5px;
+  margin: 100px auto;
+  width: 260px;
+  text-align: center;
+}
+
+.table-edit-user{
+  margin-top: -80px;
+}
+
+.input-id-db{
+  width: 100px;
+  background: #00000000;
+  color: white;
+  border: none;
+}
+
+.input-email-db{
+  width: 250px;
+  background: #00000096;
+  color: white;
+  border: 1px solid white;
+}
+
+.select-roll-db{
+  background: #000000;
+  color: white;
+  cursor: pointer;
+}
+
+/*--------------------------------instruktion--------------------------------*/
+
+.instruktion-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.instruktion-box{
+  margin-left: 0;
+  margin-right: 70px;
+  position: fixed;
+  width: calc(100vw - 20px);
+  height: auto;
+  max-height: calc(100% - 100px);
+  overflow: scroll;
+  padding: 10px;
+}
